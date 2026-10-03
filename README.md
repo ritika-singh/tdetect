@@ -1,23 +1,26 @@
-# TDetect — Fraud & Anomaly Investigation Copilot
+# TDetect - Fraud & Anomaly Investigation Copilot
 
-An AI-assisted fraud investigation tool built on Snowflake's AI Data Cloud, for the Snowflake CoCo CLI Hackathon (GCC Edition). TDetect helps a fraud analyst move from "here's a flagged transaction" to "here's the evidence, here's what similar cases looked like, here's a recommendation" — with a human making every final decision.
+An AI-assisted fraud investigation tool built on Snowflake's AI Data Cloud, for the Snowflake CoCo CLI Hackathon (GCC Edition). TDetect helps a fraud analyst move from "here's a flagged transaction" to "here's the evidence, here's what similar cases looked like, here's a recommendation" - with a human making every final decision.
 
-> Built as a portfolio project to demonstrate Snowflake + AI product design, not a production fraud system. See [Limitations](#limitations) below.
+> Built as a portfolio project to demonstrate Snowflake + AI product design, not a production fraud system. See limitations below.
 
 ---
 
 ## What it does
 
-- **Risk scoring** — 5 explainable, rule-based signals (unusual amount, new device, unusual location, high transaction velocity, unusual merchant) combine into a transparent 0–100 risk score.
-- **AI copilot** — ask "why was this flagged?" in plain English; answers are grounded strictly in the transaction's actual data, with the raw evidence shown alongside so nothing has to be taken on faith.
-- **Natural-language queries** — ask things like "show me all critical transactions from new devices" across the whole dataset; the app converts it to SQL, shows the generated query, and runs it read-only with a safety check.
-- **Similar-case lookup** — surfaces past transactions with the same signal pattern.
-- **Human-in-the-loop decisions** — Confirm Fraud / Mark Legitimate / Escalate, logged to a permanent, append-only audit trail. The AI never closes a case on its own.
-- **Two views** — an Analyst view for case-by-case investigation, and a Manager view with rolled-up metrics.
+- **Risk scoring** - 5 explainable, rule-based signals (unusual amount, new device, unusual location, high transaction velocity, unusual merchant) combine into a transparent 0–100 risk score.
+- **AI copilot** - ask "why was this flagged?" in plain English; answers are grounded strictly in the transaction's actual data, with the raw evidence shown alongside so nothing has to be taken on faith.
+- **Natural-language queries** - ask things like "show me all critical transactions from new devices" across the whole dataset; the app converts it to SQL, shows the generated query, and runs it read-only with a safety check.
+- **Similar-case lookup** - surfaces past transactions with the same signal pattern.
+- **Human-in-the-loop decisions** - Confirm Fraud / Mark Legitimate / Escalate, logged to a permanent, append-only audit trail. The AI never closes a case on its own.
+- **Two views** - an Analyst view for case-by-case investigation, and a Manager view with rolled-up metrics.
 
 ## Screenshots
 
 *(Add 2–3 screenshots here: the Overview dashboard, the Investigation screen with the copilot answer, and the Manager view.)*
+
+<img width="624" height="267" alt="image" src="https://github.com/user-attachments/assets/12352754-5854-434f-bebe-2a68a88ce9c9" />
+
 
 ## Tech stack
 
@@ -54,7 +57,7 @@ tdetect/
 
 ## How to run it
 
-1. Create a Snowflake account (a free trial works — this project used the $400 trial credit).
+1. Create a Snowflake account (a free trial works - this project used the $400 trial credit).
 2. Run the SQL scripts in `sql/` in order, in a Snowsight worksheet, to set up the schema and load the data.
 3. In Snowsight, go to **Apps → Streamlit App**, create a new app in the `ANALYTICS` schema, and paste in `app/tdetect_dashboard.py`.
 4. Click **Run**.
@@ -68,7 +71,7 @@ Snowflake (RAW → ANALYTICS → CASES)
         ↓
 Risk engine (5 rule-based signals → weighted 0–100 score)
         ↓
-AI layer (Snowflake Cortex — grounded explanation + NL-to-SQL)
+AI layer (Snowflake Cortex - grounded explanation + NL-to-SQL)
         ↓
 Streamlit app (Analyst View + Manager View)
         ↓
@@ -79,16 +82,16 @@ Audit trail (feeds back into future calibration)
 
 ## A few notable decisions
 
-- **Rule-based scoring, not a trained ML model** — no validated fraud-labeled dataset existed; an explainable v1 was judged more honest than a misleading model trained on synthetic labels.
-- **Caught and fixed a data-leakage bug (twice)** — customer "normal" baselines were briefly being computed from data that included the anomaly being evaluated, silently masking it.
-- **AI-generated SQL is never trusted blindly** — every generated query is shown to the user and checked against a blocklist before running; the analyst's original question is also pre-screened for destructive language.
+- **Rule-based scoring, not a trained ML model** - no validated fraud-labeled dataset existed; an explainable v1 was judged more honest than a misleading model trained on synthetic labels.
+- **Caught and fixed a data-leakage bug (twice)** - customer "normal" baselines were briefly being computed from data that included the anomaly being evaluated, silently masking it.
+- **AI-generated SQL is never trusted blindly** - every generated query is shown to the user and checked against a blocklist before running; the analyst's original question is also pre-screened for destructive language.
 
-Full reasoning for every decision, including alternatives considered and why they were rejected, is in [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md). The full product case study — problem, users, architecture, AI design, metrics, responsible AI, and roadmap — is in [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md).
+Full reasoning for every decision, including alternatives considered and why they were rejected, is in [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md). The full product case study - problem, users, architecture, AI design, metrics, responsible AI, and roadmap - is in [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md).
 
 ## Limitations
 
 - This is a prototype built on synthetic data, not a production fraud system.
-- Risk scoring is rule-based, not machine-learned — see the decision log for why, and the roadmap for the intended upgrade path.
+- Risk scoring is rule-based, not machine-learned - see the decision log for why, and the roadmap for the intended upgrade path.
 - Natural-language querying is scoped to one table and SELECT-only by design, not a general-purpose database assistant.
 - A few SQL queries use string interpolation for prototype simplicity; a production version would use parameterized queries throughout.
 
