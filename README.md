@@ -17,10 +17,13 @@ An AI-assisted fraud investigation tool built on Snowflake's AI Data Cloud, for 
 
 ## Screenshots
 
-<img width="624" height="267" alt="image" src="https://github.com/user-attachments/assets/12352754-5854-434f-bebe-2a68a88ce9c9" />
-<img width="624" height="267" alt="image" src="https://github.com/user-attachments/assets/5fb424df-cda6-4acc-9094-7b9ea2728d36" />
-<img width="624" height="272" alt="image" src="https://github.com/user-attachments/assets/73ee65eb-4f36-474a-87ca-179f32dd5b20" />
-<img width="624" height="268" alt="image" src="https://github.com/user-attachments/assets/33700ce6-b15f-4cac-850d-2541f7ecea0c" />
+<img width="815" height="365" alt="image" src="https://github.com/user-attachments/assets/e2de2bf9-8562-4da5-a961-ed2d5ab92f1a" />
+
+<img width="834" height="368" alt="image" src="https://github.com/user-attachments/assets/4238e1ce-4615-467e-bc71-be6898a85e3e" />
+
+<img width="833" height="266" alt="image" src="https://github.com/user-attachments/assets/54bda3b2-1ce7-45d0-9477-b8f6e3025364" />
+
+<img width="850" height="373" alt="image" src="https://github.com/user-attachments/assets/7d4067e4-9c1f-41c3-bc3e-aa2ec3e55685" />
 
 
 ## Tech stack
