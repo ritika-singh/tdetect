@@ -1,4 +1,4 @@
-# TDetect — Test Cases (Day 25)
+# TDetect - Test Cases (Day 25)
 
 Run each of these in the live Streamlit app and record the actual result. Check ✅ if it matches expected, ❌ if not (and note what happened).
 
@@ -15,7 +15,7 @@ Run each of these in the live Streamlit app and record the actual result. Check 
 
 | # | Test | Steps | Expected | Actual | Pass? |
 |---|---|---|---|---|---|
-| 5 | Grounded explanation | Select TXN-83003, ask "Why was this transaction flagged?" | Answer names amount ratio, new device, location, velocity — all matching the displayed evidence | | |
+| 5 | Grounded explanation | Select TXN-83003, ask "Why was this transaction flagged?" | Answer names amount ratio, new device, location, velocity - all matching the displayed evidence | | |
 | 6 | No invented info | Select a High (not Critical) transaction, ask "Why was this transaction flagged?" | Answer only mentions signals actually flagged for that transaction, not ones that aren't true | | |
 | 7 | Out-of-scope question | Ask something unrelated, e.g. "What is the capital of France?" | Copilot should say the data doesn't answer this, not make something up | | |
 
