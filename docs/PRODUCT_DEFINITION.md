@@ -1,7 +1,7 @@
-# TDetect — Fraud & Anomaly Investigation Copilot
+# TDetect - Fraud & Anomaly Investigation Copilot
 
 ## Target user
-Fraud/Risk Analyst (primary), Risk Manager (secondary — added Week 4)
+Fraud/Risk Analyst (primary), Risk Manager (secondary - added Week 4)
 
 ## Problem
 Fraud analysts receive large numbers of transaction alerts and must manually investigate transaction history, customer behavior, device information, and other signals before deciding whether an alert requires action.
@@ -14,4 +14,4 @@ Select suspicious transaction → understand why it was flagged → investigate 
 
 ## North Star metric
 Average investigation time per high-risk alert.
-*(Prototype/target benchmark — not a claimed real-world improvement unless actually measured.)*
+*(Prototype/target benchmark - not a claimed real-world improvement unless actually measured.)*
