@@ -17,9 +17,10 @@ An AI-assisted fraud investigation tool built on Snowflake's AI Data Cloud, for 
 
 ## Screenshots
 
-*(Add 2–3 screenshots here: the Overview dashboard, the Investigation screen with the copilot answer, and the Manager view.)*
-
 <img width="624" height="267" alt="image" src="https://github.com/user-attachments/assets/12352754-5854-434f-bebe-2a68a88ce9c9" />
+<img width="624" height="267" alt="image" src="https://github.com/user-attachments/assets/5fb424df-cda6-4acc-9094-7b9ea2728d36" />
+<img width="624" height="272" alt="image" src="https://github.com/user-attachments/assets/73ee65eb-4f36-474a-87ca-179f32dd5b20" />
+<img width="624" height="268" alt="image" src="https://github.com/user-attachments/assets/33700ce6-b15f-4cac-850d-2541f7ecea0c" />
 
 
 ## Tech stack
@@ -97,7 +98,7 @@ Full reasoning for every decision, including alternatives considered and why the
 
 ## Demo
 
-[Add your demo video link here]
+https://youtu.be/JJ8N95TMt7o
 
 ## Author
 
