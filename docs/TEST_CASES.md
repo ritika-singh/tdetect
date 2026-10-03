@@ -36,4 +36,3 @@ Run each of these in the live Streamlit app and record the actual result. Check 
 
 ---
 
-**After running these:** don't just mark pass/fail — for Day 27's case study, keep 1-2 sentences on anything interesting (a test that failed and how you fixed it is *more* valuable to mention in an interview than one that passed cleanly, since it shows real debugging, not just following a script).
